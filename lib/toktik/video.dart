@@ -37,7 +37,8 @@ class _TokTikVideoState extends ConsumerState<TokTikVideo> {
         (previous, next) => _controller.setVolume(next ? 0 : 1));
 
     _controller =
-        CachedVideoPlayerController.asset("assets/videos/${widget.asset}.mp4")
+        CachedVideoPlayerController.network(
+        "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4")
           ..setLooping(true)
           ..initialize().then((_) {
             // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
